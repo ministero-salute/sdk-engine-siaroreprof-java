@@ -1,5 +1,6 @@
 publiccodeYmlVersion: "0.4"
-name: sdk-engine-siaroreprof-java
+name: SDK Flusso Assistenza Riabilitativa Territoriale - Engine Ore
+      annuali professionisti
 applicationSuite: SDK
 url: https://github.com/ministero-salute/sdk-engine-siaroreprof-java
 landingURL: https://github.com/ministero-salute/sdk-engine-siaroreprof-java
@@ -14,13 +15,14 @@ categories:
 usedBy:
   - Regioni
 developmentStatus: stable
-softwareType: standalone/web
+softwareType: standalone/backend
 description:
   it:
-    localisedName: sdk-engine-siaroreprof-java
+    localisedName: SDK Flusso Assistenza Riabilitativa Territoriale - Engine Ore
+      annuali professionisti
     shortDescription: SDK - Sistema Informativo Assistenza Riabilitativa - Ore
       annuali professionisti
-    longDescription: Il microservizio ha come scopo  l’acquisizione dei dati inviati
+    longDescription: L'SDK ha come scopo  l’acquisizione dei dati inviati
       dalle Regioni in merito ai trattamenti riabilitativi erogati, nell’ambito
       dell’assistenza semiresidenziale e residenziale, a carattere intensivo,
       estensivo e di mantenimento di cui all’articolo 34 del decreto del

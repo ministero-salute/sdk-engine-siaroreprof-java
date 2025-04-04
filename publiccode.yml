@@ -32,7 +32,7 @@ description:
       - Verifica Dati
       - Invio Dati
 it:
-  countryExtensionVersion:"1.0"
+  countryExtensionVersion: "1.0"
   riuso:
     codiceIPA: m_sa
 legal:

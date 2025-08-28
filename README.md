@@ -74,6 +74,18 @@ sono presenti in resources anche file di configurazione:
 
 Per l'installazione e l'avvio dell'engine seguire la documentazione tecnica dettagliata disponibile all'url [`INSTALL.md`](https://github.com/ministero-salute/sdk-utilities-regole-properties/blob/main/INSTALL.md).
 
+## 📝 Licenza
+Questo progetto è rilasciato sotto licenza BSD 3-Clause License così come definita [BSD 3-Clause License](./LICENSE).
+
+## 🤝 Contributi
+I contributi sono benvenuti. Si prega di consultare il file [`CONTRIBUTING.md`](CONTRIBUTING.md) per le linee guida su come contribuire al progetto.
+
+## 📞 Contatti
+Per ulteriori informazioni, contattare:
+
+- **Service Desk - Ministero della Salute**: servicedesk.mds@medilifegroupspa.com
+- **Amministrazione titolare**: [Ministero della Salute](https://www.salute.gov.it)
+- 
 ## mantainer:
  Accenture SpA until January 2026
 

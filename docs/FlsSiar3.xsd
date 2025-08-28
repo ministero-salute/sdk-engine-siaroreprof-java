@@ -1,0 +1,116 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://flussi.mds.it/FlsSiar_3" xmlns:fls="http://flussi.mds.it/FlsSiar_3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="tipoTrasmissione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[IVC]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="annoErogazione">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="2000"/>
+			<xs:maxInclusive value="2099"/>
+			<xs:totalDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="regioneErogazione">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="010"/>
+			<xs:pattern value="020"/>
+			<xs:pattern value="030"/>
+			<xs:pattern value="041"/>
+			<xs:pattern value="042"/>
+			<xs:pattern value="050"/>
+			<xs:pattern value="060"/>
+			<xs:pattern value="070"/>
+			<xs:pattern value="080"/>
+			<xs:pattern value="090"/>
+			<xs:pattern value="100"/>
+			<xs:pattern value="110"/>
+			<xs:pattern value="120"/>
+			<xs:pattern value="130"/>
+			<xs:pattern value="140"/>
+			<xs:pattern value="150"/>
+			<xs:pattern value="160"/>
+			<xs:pattern value="170"/>
+			<xs:pattern value="180"/>
+			<xs:pattern value="190"/>
+			<xs:pattern value="200"/>
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="codASL">
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="[0-9]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="strutturaErogatrice">
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+			<xs:pattern value="[a-zA-Z0-9]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="oreErogate">
+		<xs:restriction base="xs:int">
+			<xs:totalDigits value="6"/>
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="FlsSiar_3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="fls:Assistenza"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Assistenza">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fls:Trasmissione"/>
+				<xs:element ref="fls:Erogatore"/>
+				<xs:element ref="fls:Erogazione"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Trasmissione">
+		<xs:complexType>
+			<xs:attribute name="tipo" type="fls:tipoTrasmissione" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Erogatore">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodiceRegione" type="fls:regioneErogazione"/>
+				<xs:element name="CodiceASL" type="fls:codASL"/>
+				<xs:element name="StrutturaErogatrice" type="fls:strutturaErogatrice"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Erogazione" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AnnoErogazione" type="fls:annoErogazione"/>
+				<xs:element ref="fls:OreErogate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OreErogate" nillable="false">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" name="OreErogateMMGPLS" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateMedicoSpecialista" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateInfermiere" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateOSS" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateFisioterapista" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateLogopedista" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateTerapistiNeuroPsicomotricitaEtaEvolutiva" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateTecnicoRiabilitazionePsichiatrica" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateTerapistaOccupazionale" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogatePsicologo" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateAssistenteSociale" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateEducatoreProfessionale" type="fls:oreErogate"/>
+				<xs:element minOccurs="1" name="OreErogateAltroProfessionistaSanitario" type="fls:oreErogate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

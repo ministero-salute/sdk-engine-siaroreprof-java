@@ -41,7 +41,7 @@ maintenance:
   type: contract
   contractors:
     - name: Accenture SpA
-      until: 2026-01-01
+      until: 2026-06-30
       email: accenture.technology.solutions@legalmail.it
       website: https://www.accenture.com/it-it
 localisation:
